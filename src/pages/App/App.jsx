@@ -4,12 +4,23 @@ import './App.css';
 import { getUser } from '../../utilities/users-service';
 import AuthPage from '../AuthPage/AuthPage';
 import NavBar from '../../components/NavBar/NavBar';
-import AllClassPage from '../AllClassPage/AllClassPage';
+import AllClassDaysPage from '../AllClassDaysPage/AllClassDaysPage';
 import HomePage from '../HomePage/HomePage';
 import Footer from '../../components/Footer/Footer';
+// import seedData from '../../components/ClassDayItem/ClassDaySeedData'
+import NewClassPage from '../NewClassPage/NewClassPage';
+import ClassDetailsPage from '../ClassDetailsPage/ClassDetailsPage';
 
 export default function App() {
   const [user, setUser] = useState(getUser());
+  // const [data, setData] = useState(seedData)
+  const [newClassDay, setNewClassDay] = useState("")
+  const [classDay, setClassDay] = useState("")
+
+  function addClassDay(classDay){
+  setNewClassDay([...classDay, classDay])
+  }
+
   return (
     <main className="App">
       <div className="page-container">
@@ -18,11 +29,14 @@ export default function App() {
         <>
           <NavBar user={user} setUser={setUser} />
           <Routes>
-            <Route path="/classes" element={<AllClassPage />} />
+            <Route path="/classDays" element={<AllClassDaysPage />} />
             <Route path="/" element={<HomePage />} />
+            <Route path="/newClass" element={<NewClassPage/>} />
+            <Route path="/classDay/${classDay._id}" element={<ClassDetailsPage />} />
           </Routes>
         </>
         :
+       
         <AuthPage setUser={setUser} />
       }
       </div>

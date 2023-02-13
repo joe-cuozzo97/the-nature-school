@@ -1,20 +1,58 @@
-require('dotenv').config();
-require('./config/database');
+require("dotenv").config();
+require("./config/database");
 
-const Class = require('./models/class');
+const ClassDay = require("./models/classDay");
 
- (async function(){
 
-    await Class.deleteMany({});
-    const classes = await Class.create([
-        {date:'monday', time:'1pm', location:'blue heron park', activities:'fun stuff!', forecast:'cold'},
-        {date:'monday', time:'2pm', location:'blue heron park', activities:'fun stuff!', forecast:'cold'},
-        {date:'monday', time:'3pm', location:'blue heron park', activities:'fun stuff!', forecast:'cold'},
-        {date:'monday', time:'4pm', location:'blue heron park', activities:'fun stuff!', forecast:'cold'},
-        {date:'monday', time:'5pm', location:'blue heron park', activities:'fun stuff!', forecast:'cold'},
-        {date:'monday', time:'6pm', location:'blue heron park', activities:'fun stuff!', forecast:'cold'}
-    ]);
-    console.log(classes)
-    process.exit()
- })();
- 
+// IIFE - Immediately Invoked Function Expression
+(async function () {
+  await ClassDay.deleteMany({});
+  const classDays = await ClassDay.create([
+    {
+      date: "Monday",
+      time: "1pm",
+      location: "blue heron park",
+      activities: "fun stuff!",
+      forecast: "cold",
+    },
+    {
+      date: "Tuesday",
+      time: "2pm",
+      location: "blue heron park",
+      activities: "fun stuff!",
+      forecast: "cold",
+    },
+    {
+      date: "Wednesday",
+      time: "3pm",
+      location: "Clove Lake",
+      activities: "fun stuff!",
+      forecast: "cold",
+    },
+    {
+      date: "Thursday",
+      time: "4pm",
+      location: "blue heron park",
+      activities: "fun stuff!",
+      forecast: "cold",
+    },
+    {
+      date: "Friday",
+      time: "5pm",
+      location: "GreenBelt Park",
+      activities: "fun stuff!",
+      forecast: "cold",
+    },
+    {
+      date: "Saturday",
+      time: "6pm",
+      location: "blue heron park",
+      activities: "fun stuff!",
+      forecast: "cold",
+    },
+  ]);
+
+  console.log(classDays);
+
+  process.exit();
+})();
