@@ -32,7 +32,7 @@ export default function App() {
             <Route path="/classDays" element={<AllClassDaysPage />} />
             <Route path="/" element={<HomePage />} />
             <Route path="/newClass" element={<NewClassPage/>} />
-            <Route path="/classDay/${classDay._id}" element={<ClassDetailsPage />} />
+            <Route path="/classDays/:id" element={<ClassDetailsPage />} />
           </Routes>
         </>
         :

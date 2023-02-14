@@ -26,15 +26,14 @@ export default function AllClassDaysPage() {
   return (
     <div>
       <h1>All Class Days Page</h1>
-      { <Link to={"/classDay/${classDay._id}"}>
         {classDay.map((classDayItem) => (
           <ClassDayItem
+            ID = {classDayItem._id}
             date={classDayItem.date}
             time={classDayItem.time}
             location={classDayItem.location}
           />
         ))}
-      </Link> }
     </div>
   );
 }

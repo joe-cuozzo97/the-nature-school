@@ -1,9 +1,8 @@
-const classDay = require("../../models/classDay");
 const ClassDay = require("../../models/classDay");
 
 module.exports = {
     index,
-    // show,
+    show,
     create
 };
 
@@ -16,15 +15,7 @@ async function create(req, res){
   console.log('hello world')
   try {
     const formData = req.body;
-    console.log(formData)
-  const newClassDay = new ClassDay({
-    date: formData.date,
-    time: formData.time,
-    location: formData.location,
-    activities: formData.activities,
-    forecast: formData.forecast
-
-  })
+  const newClassDay = new ClassDay(formData.classDay)
   console.log(newClassDay)
   await newClassDay.save();
   res.send(newClassDay)
@@ -33,10 +24,11 @@ async function create(req, res){
   }
 }
 
-// async function show(req, res) {
-//   const classDay = await ClassDay.findById(req.params.id);
-//   res.json(classDay);
-// }
+async function show(req, res) {
+  console.log(req.params.id);
+  const classDay = await ClassDay.findById(req.params.id);
+  res.json(classDay);
+}
 
 
 

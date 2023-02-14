@@ -25,6 +25,7 @@ app.use(require('./config/checkToken'));
 app.use('/api/users', require('./routes/api/users'));
 // app.use('/api/classDays', require('./routes/api/classDays'));
 app.use('/api/classDays', require('./routes/api/classDays'))
+//app.use('/api/classDays/:id', require('./routes/api/classDays'))
 // app.use('/api/classDays', require('./controllers/api/classDays').create )
 
 // The following "catch all" route (note the *) is necessary
