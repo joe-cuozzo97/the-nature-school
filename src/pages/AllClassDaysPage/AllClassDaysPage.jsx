@@ -21,19 +21,20 @@ export default function AllClassDaysPage() {
   }
   getClassDays();
 }, []);
-  console.log(classDay)
   
   return (
     <div>
       <h1>All Class Days Page</h1>
         {classDay.map((classDayItem) => (
-          <ClassDayItem
+          <ClassDayItem 
             ID = {classDayItem._id}
             date={classDayItem.date}
             time={classDayItem.time}
             location={classDayItem.location}
+            key={classDayItem._id}
           />
         ))}
     </div>
   );
 }
+

@@ -24,11 +24,13 @@ async function create(req, res){
   }
 }
 
-async function show(req, res) {
-  console.log(req.params.id);
+async function show(req, res){
   const classDay = await ClassDay.findById(req.params.id);
-  res.json(classDay);
+   res.json(classDay);
 }
+
+
+
 
 
 

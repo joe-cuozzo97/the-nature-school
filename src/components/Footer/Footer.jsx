@@ -8,7 +8,7 @@ export default function Footer() {
         <div className="row">
             <div className="col">
                 <h4>Contact Us:</h4>
-                <ul classname="list-unstyled">
+                <ul className="list-unstyled">
                     <li>Email</li>
                     <li>Instagram</li>
                     <li>Facebook</li>

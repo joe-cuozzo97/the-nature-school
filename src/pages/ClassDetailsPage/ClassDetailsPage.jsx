@@ -6,25 +6,36 @@ import ClassDayItem from "../../components/ClassDayItem/ClassDayItem";
 
 
 export default function ClassDetailsPage() {
-  const [classDay, setClassDay] = useState({});
-const {id} = useParams();
+  
+  const [classDay, setClassDay] = useState([]);
+  const {id} = useParams()
+  //   const handleSubmit = (e) => {
+  //   e.preventDefault();
+  //   const formData = new FormData(e.target);
+  //   const classDay = formData.get("classDay");
+  //   setClassDay([...classDay, classDay]);
+  // };
 
-useEffect(function() {
-  async function getClassDayByID() {
+ useEffect(function() {
+  console.log("hello")
+  async function getClassDay() {
     const classDay = await classDaysAPI.getById(id);
+    console.log(classDay)
     setClassDay(classDay);
-
   }
-  getClassDayByID();
+  getClassDay();
 }, []);
 
   return (
     <>
     <div>
       <h1>Details Page</h1>
-      <h1>{classDay.date}</h1>
-        <p>{id}</p>
-        <p>{id}</p>
+      <p>{classDay.date}</p>
+      <p>{classDay.time}</p>
+      <p>{classDay.location}</p>
+      <p>{classDay.activities}</p>
+      <p>{classDay.forecast}</p>
+      
 
     </div>
     <hr />
