@@ -1,10 +1,11 @@
 import React from "react";
 import * as classDaysAPI from '../../utilities/classDays-api';
-import './NewClassPage.css';
+import './EditClassPage.css';
 import { useState } from "react";
+import { useParams } from "react-router-dom"
 
-export default function NewClassPage({addClassDay}) {
-  const [newClassDay, setNewClassDay] = useState("")
+export default function EditClassPage() {
+  const {id} = useParams()
   const [formData, setFormData]= useState({
     date:"",
     time:"",
@@ -17,22 +18,19 @@ export default function NewClassPage({addClassDay}) {
     setFormData(newFormData)
   }
 
-  function addClassDay(newClassDay){
-  setNewClassDay([...newClassDay, newClassDay])
-  classDaysAPI.addClassDayToPage(newClassDay)
-  }
+
 function handleSubmit(e){
   e.preventDefault()
   console.log(formData)
-  classDaysAPI.addClassDayToPage(formData)
+  classDaysAPI.editClassDay(id, formData)
 
 }
 
   return (
     <>
-    
-     <h2>New Class Day</h2>
-     <div className="newForm">
+    <div>
+     <h2>Edit Class Day</h2>
+     <div className="editForm">
      <form onSubmit={handleSubmit}>
   
      <label>Date</label>
@@ -45,9 +43,10 @@ function handleSubmit(e){
      <input name="activities" onChange={handleChange} />
      <label>Forecast</label>
      <input name="forecast" onChange={handleChange} />
-     <button className="addNewBtn" type="submit">Add New Class Day</button>
+     <button type="submit">Submit</button>
      </form>
      </div>
+    </div>
     </>
   );
 

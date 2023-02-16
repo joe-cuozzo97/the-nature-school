@@ -7,9 +7,9 @@ import NavBar from '../../components/NavBar/NavBar';
 import AllClassDaysPage from '../AllClassDaysPage/AllClassDaysPage';
 import HomePage from '../HomePage/HomePage';
 import Footer from '../../components/Footer/Footer';
-// import seedData from '../../components/ClassDayItem/ClassDaySeedData'
 import NewClassPage from '../NewClassPage/NewClassPage';
 import ClassDetailsPage from '../ClassDetailsPage/ClassDetailsPage';
+import EditClassPage from '../EditClassPage/EditClassPage';
 
 export default function App() {
   const [user, setUser] = useState(getUser());
@@ -33,6 +33,7 @@ export default function App() {
             <Route path="/" element={<HomePage />} />
             <Route path="/newClass" element={<NewClassPage/>} />
             <Route path="/classDays/:id" element={<ClassDetailsPage />} />
+            <Route path="/classDays/:id/edit" element={<EditClassPage />} />
           </Routes>
         </>
         :

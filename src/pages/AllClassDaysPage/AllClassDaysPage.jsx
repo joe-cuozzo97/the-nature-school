@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import * as classDaysAPI from '../../utilities/classDays-api';
 import ClassDayItem from "../../components/ClassDayItem/ClassDayItem";
-import { Link } from "react-router-dom";
+import "./AllClassDaysPage.css"
 
 export default function AllClassDaysPage() {
   
@@ -24,7 +24,8 @@ export default function AllClassDaysPage() {
   
   return (
     <div>
-      <h1>All Class Days Page</h1>
+      <h1 className="header">This Week's Classes</h1>
+      <div className="classItem">
         {classDay.map((classDayItem) => (
           <ClassDayItem 
             ID = {classDayItem._id}
@@ -32,8 +33,10 @@ export default function AllClassDaysPage() {
             time={classDayItem.time}
             location={classDayItem.location}
             key={classDayItem._id}
+            
           />
         ))}
+        </div>
     </div>
   );
 }

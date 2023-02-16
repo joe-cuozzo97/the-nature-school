@@ -10,7 +10,16 @@ export function getById(id) {
   return sendRequest(`${BASE_URL}/${id}`);
 }
 
+
 export function addClassDayToPage(classDay) {
-console.log(classDay)
-  return sendRequest(`${BASE_URL}`,'POST', {classDay});
+  console.log(classDay)
+    return sendRequest(`${BASE_URL}`,'POST', {classDay});
+  }
+
+export function deleteClassDay(id){
+  return sendRequest(`${BASE_URL}/${id}`, 'DELETE')
+}
+
+export function editClassDay(id, newClassDay){
+  return sendRequest(`${BASE_URL}/${id}`, 'PUT', {id, newClassDay});
 }

@@ -3,7 +3,9 @@ const ClassDay = require("../../models/classDay");
 module.exports = {
     index,
     show,
-    create
+    create,
+    delete: deleteClassDay,
+    edit: editClassDay
 };
 
 async function index(req, res) {
@@ -29,7 +31,25 @@ async function show(req, res){
    res.json(classDay);
 }
 
+async function deleteClassDay(req, res){
+  const classDay = await ClassDay.findByIdAndDelete(req.params.id)
+  res.json(classDay)
+}
 
+async function editClassDay(req, res){
+  const classDay = await ClassDay.findById(req.params.id)
+  const newClassDay = req.body.newClassDay;
+  console.log(newClassDay);
+  console.log(classDay);
+  classDay.date = newClassDay.date;
+  classDay.time = newClassDay.time;
+  classDay.location = newClassDay.location;
+  classDay.activities = newClassDay.activities;
+  classDay.forecast = newClassDay.forecast;
+  classDay.save();
+  console.log(classDay);
+  res.json(classDay)
+}
 
 
 
