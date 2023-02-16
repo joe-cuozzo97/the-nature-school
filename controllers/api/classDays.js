@@ -39,15 +39,12 @@ async function deleteClassDay(req, res){
 async function editClassDay(req, res){
   const classDay = await ClassDay.findById(req.params.id)
   const newClassDay = req.body.newClassDay;
-  console.log(newClassDay);
-  console.log(classDay);
   classDay.date = newClassDay.date;
   classDay.time = newClassDay.time;
   classDay.location = newClassDay.location;
   classDay.activities = newClassDay.activities;
   classDay.forecast = newClassDay.forecast;
   classDay.save();
-  console.log(classDay);
   res.json(classDay)
 }
 
