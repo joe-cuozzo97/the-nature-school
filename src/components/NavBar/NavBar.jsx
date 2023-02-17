@@ -13,7 +13,7 @@ export default function NavBar(props) {
     <nav>
       <div className="navBar">
         <ul>
-        <li className="image"><img src="https://i.imgur.com/Tl4Y5C2.jpeg" alt="" /></li>
+        <li className="image"><img src="https://i.imgur.com/WuB8FI1.png" alt="" /></li>
       <li><Link className="navLink" to={"/"}>Home</Link></li>
       <li><Link className="navLink" to="/classDays">All Classes</Link></li>
       <li><Link className="navLink" to={"/NewClass"}>Add New Class</Link></li>

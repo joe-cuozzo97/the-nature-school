@@ -1,6 +1,6 @@
 img{
     width: 125px;
-    height: 90px;
+    height: 120px;
     border-radius: 15px;
     display: flex;
 }
@@ -35,15 +35,6 @@ img{
     align-items: center;
     padding: .25rem;
 }
-
-.image{
-    
-}
-
-.welcome{
-    
-}
-
 .navBar li:hover{
     background-color:#4B6F44 ;
     border-radius: 5px;
