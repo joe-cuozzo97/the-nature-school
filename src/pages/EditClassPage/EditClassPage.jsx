@@ -4,7 +4,7 @@ import './EditClassPage.css';
 import { useState } from "react";
 import { useParams } from "react-router-dom"
 
-export default function EditClassPage() {
+export default function EditClassPage(props) {
   const {id} = useParams()
   const [formData, setFormData]= useState({
     date:"",
@@ -25,6 +25,7 @@ function handleSubmit(e){
   classDaysAPI.editClassDay(id, formData)
 
 }
+console.log(props)
 
   return (
     <>

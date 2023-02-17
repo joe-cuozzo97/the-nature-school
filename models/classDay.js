@@ -8,6 +8,7 @@ const classDaySchema = new Schema(
     location: String,
     activities: String,
     forecast: String,
+    userName: String
   },
   {
     timestamps: true,

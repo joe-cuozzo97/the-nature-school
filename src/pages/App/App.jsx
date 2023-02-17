@@ -31,9 +31,9 @@ export default function App() {
           <Routes>
             <Route path="/classDays" element={<AllClassDaysPage />} />
             <Route path="/" element={<HomePage />} />
-            <Route path="/newClass" element={<NewClassPage/>} />
-            <Route path="/classDays/:id" element={<ClassDetailsPage />} />
-            <Route path="/classDays/:id/edit" element={<EditClassPage />} />
+            <Route path="/newClass" element={<NewClassPage user={user} />} />
+            <Route path="/classDays/:id" element={<ClassDetailsPage user={user} />} />
+            <Route path="/classDays/:id/edit" element={<EditClassPage user={user} />} />
           </Routes>
         </>
         :

@@ -3,7 +3,7 @@ import { useState, useEffect } from "react";
 import "./ClassDetailsPage.css";
 import * as classDaysAPI from "../../utilities/classDays-api";
 
-export default function ClassDetailsPage() {
+export default function ClassDetailsPage(props) {
   const [classDay, setClassDay] = useState([]);
   const { id } = useParams();
 
@@ -18,7 +18,8 @@ export default function ClassDetailsPage() {
   async function deleteClassDay() {
     await classDaysAPI.deleteClassDay(id);
   }
-
+console.log(props.user.name)
+console.log(classDay)
   return (
     
     <>
@@ -32,10 +33,12 @@ export default function ClassDetailsPage() {
           <p><b>Activities:</b>: {classDay.activities}</p>
           <p><b>Forecast:</b>: {classDay.forecast}</p>
 
-          <Link to={`/classDays/${id}/edit`}>
+          {classDay.userName && props.user.name ===classDay.userName &&<Link to={`/classDays/${id}/edit`}>
+            
             <button>Edit Class Day</button>
-          </Link>
-          <button onClick={deleteClassDay}>Delete Class Day</button>
+          </Link>}
+
+          {classDay.userName && props.user.name ===classDay.userName && <button onClick={deleteClassDay}>Delete Class Day</button>}
         </div>
         </div>
       </div>

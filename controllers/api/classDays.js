@@ -44,6 +44,7 @@ async function editClassDay(req, res){
   classDay.location = newClassDay.location;
   classDay.activities = newClassDay.activities;
   classDay.forecast = newClassDay.forecast;
+  classDay.userName = newClassDay.userName
   classDay.save();
   res.json(classDay)
 }

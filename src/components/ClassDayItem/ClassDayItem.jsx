@@ -11,6 +11,7 @@ export default function ClassDayItem(props) {
         <Link to={`/classDays/${props.ID}`}> <h1>{props.date}</h1></Link>
         <p>{props.time}</p>
         <p>{props.location}</p>
+        
 
       </div>
   );

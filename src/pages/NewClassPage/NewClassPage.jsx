@@ -3,14 +3,15 @@ import * as classDaysAPI from '../../utilities/classDays-api';
 import './NewClassPage.css';
 import { useState } from "react";
 
-export default function NewClassPage({addClassDay}) {
+export default function NewClassPage({ user}) {
   const [newClassDay, setNewClassDay] = useState("")
   const [formData, setFormData]= useState({
     date:"",
     time:"",
     location:"",
     activities:"",
-    forecast:""
+    forecast:"",
+    userName:""
   })
   function handleChange(e){
     const newFormData = {...formData, [e.target.name]: e.target.value};
@@ -24,10 +25,10 @@ export default function NewClassPage({addClassDay}) {
 function handleSubmit(e){
   e.preventDefault()
   console.log(formData)
-  classDaysAPI.addClassDayToPage(formData)
+  console.log(user.name)
+  classDaysAPI.addClassDayToPage({...formData,userName: user.name})
 
 }
-
   return (
     <>
     

@@ -13,11 +13,11 @@ export default function NavBar(props) {
     <nav>
       <div className="navBar">
         <ul>
-        <li><img src="https://i.imgur.com/Tl4Y5C2.jpeg" alt="" /></li>
+        <li className="image"><img src="https://i.imgur.com/Tl4Y5C2.jpeg" alt="" /></li>
       <li><Link className="navLink" to={"/"}>Home</Link></li>
       <li><Link className="navLink" to="/classDays">All Classes</Link></li>
       <li><Link className="navLink" to={"/NewClass"}>Add New Class</Link></li>
-      <li><span className="navLink">Welcome, {props.user.name}</span></li>
+      <li className="welcome"><span className="navLink">Welcome, {props.user.name}</span></li>
       <li><Link className="navLink" to="" onClick={handleLogOut}>
         Log Out
       </Link></li>
